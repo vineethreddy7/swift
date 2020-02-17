@@ -61,4 +61,6 @@ var final = a*Double(readLine()!)!
 
 final+=final*0.10
 
+//print("Final price is \(a*Double(readLine()!)!*1.10)")
+
 print("Final price is \(final)")
