@@ -11,21 +11,14 @@ import Foundation
 
 //ask user to enter quantity, find the total price and the tax and print the final price
 
-
 print("Enter number of products")
-
 
 let n: Int = Int(readLine()!)!
 
-
 func prod(products: inout[String],prices: inout[Double],n: Int)
-
 {
-
     for i in 0..<n
-
 {
-
     print("Enter product \(i+1)")
 
     products.append(readLine()!)
@@ -33,45 +26,34 @@ func prod(products: inout[String],prices: inout[Double],n: Int)
     print("Enter price \(i+1)")
 
     prices.append(Double(readLine()!)!)
-
 }
 
 }
 
-
-var product: [String] = []
-
-
-var price: [Double] = []
-
-
-var a: Double = 0
-
-
-prod(products: &product,prices: &price,n: n)
-
-
+func search(products: [String])->Int
+{
 print("Enter product name you want to buy")
-
 
 let s: String = readLine()!
 
-
 for i in 0..<product.count
-
 {
-
     if product[i]==s
-
 {
-
-    a = price[i]
-
+    return i
 }
 
 }
+    return 0
+}
 
-print(a)
+var product: [String] = []
+
+var price: [Double] = []
+
+prod(products: &product,prices: &price,n: n)
+
+var a: Double = price[search(products: product)]
 
 print("Enter quantity")
 
